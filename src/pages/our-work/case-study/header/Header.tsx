@@ -75,8 +75,7 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
           <img
             className="w-full h-[500px] scale-50 info_img info_card"
             src={header.image}
-            alt={header.title.toLowerCase()}
-            loading='lazy'
+            alt={"case-study header 1"}
           />
         </div>
       </div>
