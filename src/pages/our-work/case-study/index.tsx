@@ -222,7 +222,7 @@ const CaseStudy: React.FC = () => {
         scrollTrigger: {
           trigger: ".info_card2",
           start: "top 80%",
-          end: "bottom 60%",
+          end: "bottom 20%",
           markers: false, 
           toggleActions: "play reverse play reverse",
         },
