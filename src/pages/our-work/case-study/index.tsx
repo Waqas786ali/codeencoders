@@ -79,6 +79,7 @@ const CaseStudy: React.FC = () => {
 
   useGSAP(() => {
   
+  
     gsap.fromTo(
       ".text_apear",
       {
@@ -98,6 +99,7 @@ const CaseStudy: React.FC = () => {
         duration: 1,
       }
     );
+   
     
     gsap.timeline({
       scrollTrigger: {
@@ -122,25 +124,23 @@ const CaseStudy: React.FC = () => {
 
       gsap.fromTo(
         ".info_card",
-        { 
-          opacity: 0,
+        {
+          opacity: 0.5,
           scale: 0.5,
           y: 200,
         },
         {
-          scale: 0.5, opacity: 0.8 ,
+          opacity: 0.8,
+          scale: 0.5,
           y: 0,
-          scrollTrigger: {
-            trigger: ".info_card",
-            start: "top 80%",
-            end: "bottom 60%",
-            markers: false, 
-            // toggleActions: "play reverse play reverse",
-          },
+       
+          immediateRender: true,
           stagger: 0.2,
           duration: 1,
         }
       );
+
+     
 
           // Split text into individual letters for animation
     const splitTextIntoLetters = (selector: string) => {
