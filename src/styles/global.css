@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "euro-bold";
+  src: local("euro-bold"),
+    url("../../public/assets/fonts/euro-bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "euro-light";
+  src: local("euro-light"),
+    url("../../public/assets/fonts/euro-light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "euro-semibold";
+  src: local("euro-semibold"),
+    url("../../public/assets/fonts/euro-semibold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "suisse-bold";
+  src: local("suisse-bold"),
+    url("../../public/assets/fonts/suisse-bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "suisse-light";
+  src: local("suisse-light"),
+    url("../../public/assets/fonts/suisse-light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "suisse-medium";
+  src: local("suisse-medium"),
+    url("../../public/assets/fonts/suisse-medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "suisse-regular";
+  src: local("suisse-regular"),
+    url("../../public/assets/fonts/suisse-regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+
+/*Global CSS*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  /*CSS for Scrollbar*/
+
+  /*For Mozilla*/
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+
+  /*For edge*/
+  -ms-overflow-style: none;
+}
+
+/*For Chrome*/
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+
+:root {
+  /* Font-Sizes for Laptop */
+  --h1: 3.437rem; /*55px*/
+  --h2: 2.5rem; /*40px*/
+  --h3: 2rem; /*32px*/
+  --h4: 1.75rem; /*28px*/
+  --h5: 1.5rem; /*24px*/
+  --xl: 1.375rem; /*22px*/
+  --lg: 1.25rem; /*20px*/
+  --base: 1.125rem; /*18px*/
+  --md: 1rem; /*16px*/
+  --sm: 0.875rem; /*14px*/
+  --xs: 0.75rem; /*12px*/
+
+  /* Colors */
+  --primary-blue: #2401D5;
+  --secondary-blue: #25BAFF;
+  --primary-orange: #FF980A;
+  --secondary-orange: #FF5900;
+  --light-gray: #D3D3D3;
+  --dark-gray: #292D32;
+  --blur-gray: #D9D9D91A;
+  --dark-blue: #0D121C;
+  --light-black: #060606;
+  --black: #000;
+
+  --shine-gradient: linear-gradient(168deg, #000 8.95%, #292929 150.36%);
+}
+
+@media screen and (max-width: 1023px) {
+  :root {
+    /* Font-Sizes for Tab */
+    --h1: 3rem; /*48px*/
+    --h2: 2rem; /*32px*/
+    --h3: 1.5rem; /*28px*/
+    --h4: 1.375rem; /*24px*/
+    --h5: 1.25rem; /*22px*/
+    --xl: 1.125rem; /*20px*/
+    --lg: 1.1rem; /*18px*/
+    --base: 1rem; /*16px*/
+    --md: 1rem; /*16px*/
+    --sm: 0.875rem; /*14px*/
+    --xs: 0.75rem; /*12px*/
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    /* Font-Sizes for Mobile */
+   --h1: 2.25rem; /*36px*/
+   --h2: 1.75rem; /*28px*/
+   --h3: 1.2rem; /*24px*/
+   --h4: 1.375rem; /*22px*/
+   --h5: 1.25rem; /*20px*/
+   --xl: 1.125rem; /*18px*/
+   --lg: 1rem; /*16px*/
+   --base: 0.875rem; /*14px*/
+   --md: 00.875rem; /*14px*/
+   --sm: 0.875rem; /*14px*/
+   --xs: 0.75rem; /*12px*/
+  }
+}
+@media screen and (max-width: 400px) {
+  :root {
+    /* Font-Sizes for Mobile */
+   --h1: 2rem; /*33.6px*/
+   --h2: 1.5rem; /*24px*/
+   --h3: 1.375rem; /*22px*/
+   --h4: 1.1rem; /*20px*/
+   --h5: 1.125rem; /*18px*/
+   --xl: 1rem; /*16px*/
+   --lg: 0.875rem; /*14px*/
+   --base: 0.875rem; /*14px*/
+   --md: 0.875rem; /*14px*/
+   --sm: 0.75rem; /*12px*/
+   --xs: 0.75rem; /*12px*/
+  }
+}
+
+/*CSS for Site*/
+body,
+html {
+  text-rendering: auto;
+  line-height: normal;
+  overflow-x: hidden;
+  background: var(--black);
+}
+
+/* Text Gradient Classes */
+
+.text-blue-gradient{
+  background: linear-gradient(45deg, #2faef5, #1140ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.text-blue-gradient-2{
+  background: var(--gradient-blue, linear-gradient(81deg, #ECECEC 15.06%, #7381B2 102.87%));
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Header Shades */
+
+.left_shade, .right_shade {
+  width: clamp(300px, 30vw, 600px);
+}
+
+
+.left_shade{
+  position: absolute;
+  left: -22%;
+  top: 0%;
+  bottom: 0%;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  border-radius: 100%;
+  opacity: 0.35;
+  background: var(--secondary-blue);
+  filter: blur(130.25px);
+}
+.right_shade{
+  position: absolute;
+  right: -22%;
+  top: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  border-radius: 663px;
+  opacity: 0.35;
+  background: var(--secondary-blue);
+  filter: blur(130.25px);
+}
+
+.top_shade {
+  width: 80%;
+  height: 300px;
+}
+.top_shade{
+  position: absolute;
+  top: -5%;
+  left: 10%;
+  right: 10%;
+  flex-shrink: 0;
+  border-radius: 1872px;
+  opacity: 0.5;
+  background: radial-gradient(50% 50% at 50% 50%, #FF980A 0%, rgba(37, 186, 255, 0.00) 100%);
+  filter: blur(80.25px);
+}
+
+.top_blue_shade{
+  width: 100vw;
+  height: 1369px;
+  flex-shrink: 0;
+  position: absolute;
+  top: -70%;
+  left: 0%;
+  right: 0%;
+  flex-shrink: 0;
+  border-radius: 1872px;
+  opacity: 0.5;
+  background: radial-gradient(50% 50% at 50% 50%, #3554FF 0%, rgba(53, 84, 255, 0.00) 100%);
+}
+
+
+/* Border gradient */
+.border-shine-gradient {  
+  /* border: 1px solid var(--light-gray); */
+  background: linear-gradient(314deg, #292D32 0%, #7D8998 100%);
+  padding: 1px;
+}
+/* Border gradient */
+.bg-shine-gradient {  
+  /* border: 1px solid var(--light-gray); */
+  background: linear-gradient(108deg, #000 37.64%, #1b1b1b 100%);
+}
+
+
+
+.shader_canvas > div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+}
+
+
