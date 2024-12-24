@@ -188,13 +188,13 @@ const Clients = () => {
   useEffect(() => {
     if (menuVisible) {
       let scrollY = window.scrollY;
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflowY = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       setScrollValue(scrollY);
       console.log("scrollValue", scrollY);
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflowY = 'auto';
       document.body.style.position = 'initial';
       document.body.style.top = `-${scrollValue}px`;
       console.log("scrollValue1", scrollValue);
@@ -202,7 +202,7 @@ const Clients = () => {
     }
     
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflowY = 'auto';
       document.body.style.position = 'initial';
     };
   }, [menuVisible]);
