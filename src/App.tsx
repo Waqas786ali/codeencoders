@@ -21,7 +21,7 @@ function App() {
 
 
   return (
-    <div className="parent">
+    <div className="parent overflow-x-hidden">
       <ReactLenis
         root
         options={{

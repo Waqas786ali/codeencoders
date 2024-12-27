@@ -45,7 +45,6 @@
   font-display: swap;
 }
 
-
 /*Global CSS*/
 * {
   box-sizing: border-box;
@@ -73,7 +72,6 @@
   background-color: transparent;
 }
 
-
 :root {
   /* Font-Sizes for Laptop */
   --h1: 3.437rem; /*55px*/
@@ -89,14 +87,14 @@
   --xs: 0.75rem; /*12px*/
 
   /* Colors */
-  --primary-blue: #2401D5;
-  --secondary-blue: #25BAFF;
-  --primary-orange: #FF980A;
-  --secondary-orange: #FF5900;
-  --light-gray: #D3D3D3;
-  --dark-gray: #292D32;
-  --blur-gray: #D9D9D91A;
-  --dark-blue: #0D121C;
+  --primary-blue: #2401d5;
+  --secondary-blue: #25baff;
+  --primary-orange: #ff980a;
+  --secondary-orange: #ff5900;
+  --light-gray: #d3d3d3;
+  --dark-gray: #292d32;
+  --blur-gray: #d9d9d91a;
+  --dark-blue: #0d121c;
   --light-black: #060606;
   --black: #000;
 
@@ -123,33 +121,33 @@
 @media screen and (max-width: 767px) {
   :root {
     /* Font-Sizes for Mobile */
-   --h1: 2.25rem; /*36px*/
-   --h2: 1.75rem; /*28px*/
-   --h3: 1.2rem; /*24px*/
-   --h4: 1.375rem; /*22px*/
-   --h5: 1.25rem; /*20px*/
-   --xl: 1.125rem; /*18px*/
-   --lg: 1rem; /*16px*/
-   --base: 0.875rem; /*14px*/
-   --md: 00.875rem; /*14px*/
-   --sm: 0.875rem; /*14px*/
-   --xs: 0.75rem; /*12px*/
+    --h1: 2.25rem; /*36px*/
+    --h2: 1.75rem; /*28px*/
+    --h3: 1.2rem; /*24px*/
+    --h4: 1.375rem; /*22px*/
+    --h5: 1.25rem; /*20px*/
+    --xl: 1.125rem; /*18px*/
+    --lg: 1rem; /*16px*/
+    --base: 0.875rem; /*14px*/
+    --md: 00.875rem; /*14px*/
+    --sm: 0.875rem; /*14px*/
+    --xs: 0.75rem; /*12px*/
   }
 }
 @media screen and (max-width: 400px) {
   :root {
     /* Font-Sizes for Mobile */
-   --h1: 2rem; /*33.6px*/
-   --h2: 1.5rem; /*24px*/
-   --h3: 1.375rem; /*22px*/
-   --h4: 1.1rem; /*20px*/
-   --h5: 1.125rem; /*18px*/
-   --xl: 1rem; /*16px*/
-   --lg: 0.875rem; /*14px*/
-   --base: 0.875rem; /*14px*/
-   --md: 0.875rem; /*14px*/
-   --sm: 0.75rem; /*12px*/
-   --xs: 0.75rem; /*12px*/
+    --h1: 2rem; /*33.6px*/
+    --h2: 1.5rem; /*24px*/
+    --h3: 1.375rem; /*22px*/
+    --h4: 1.1rem; /*20px*/
+    --h5: 1.125rem; /*18px*/
+    --xl: 1rem; /*16px*/
+    --lg: 0.875rem; /*14px*/
+    --base: 0.875rem; /*14px*/
+    --md: 0.875rem; /*14px*/
+    --sm: 0.75rem; /*12px*/
+    --xs: 0.75rem; /*12px*/
   }
 }
 
@@ -165,27 +163,30 @@ html {
 
 /* Text Gradient Classes */
 
-.text-blue-gradient{
+.text-blue-gradient {
   background: linear-gradient(45deg, #2faef5, #1140ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.text-blue-gradient-2{
-  background: var(--gradient-blue, linear-gradient(81deg, #ECECEC 15.06%, #7381B2 102.87%));
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+.text-blue-gradient-2 {
+  background: var(
+    --gradient-blue,
+    linear-gradient(81deg, #ececec 15.06%, #7381b2 102.87%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Header Shades */
 
-.left_shade, .right_shade {
+.left_shade,
+.right_shade {
   width: clamp(300px, 30vw, 600px);
 }
 
-
-.left_shade{
+.left_shade {
   position: absolute;
   left: -22%;
   top: 0%;
@@ -197,7 +198,7 @@ background-clip: text;
   background: var(--secondary-blue);
   filter: blur(130.25px);
 }
-.right_shade{
+.right_shade {
   position: absolute;
   right: -22%;
   top: 0;
@@ -214,7 +215,7 @@ background-clip: text;
   width: 80%;
   height: 300px;
 }
-.top_shade{
+.top_shade {
   position: absolute;
   top: -5%;
   left: 10%;
@@ -222,11 +223,15 @@ background-clip: text;
   flex-shrink: 0;
   border-radius: 1872px;
   opacity: 0.5;
-  background: radial-gradient(50% 50% at 50% 50%, #FF980A 0%, rgba(37, 186, 255, 0.00) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #ff980a 0%,
+    rgba(37, 186, 255, 0) 100%
+  );
   filter: blur(80.25px);
 }
 
-.top_blue_shade{
+.top_blue_shade {
   width: 100vw;
   height: 1369px;
   flex-shrink: 0;
@@ -237,39 +242,37 @@ background-clip: text;
   flex-shrink: 0;
   border-radius: 1872px;
   opacity: 0.5;
-  background: radial-gradient(50% 50% at 50% 50%, #3554FF 0%, rgba(53, 84, 255, 0.00) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #3554ff 0%,
+    rgba(53, 84, 255, 0) 100%
+  );
 }
 
-
 /* Border gradient */
-.border-shine-gradient {  
+.border-shine-gradient {
   /* border: 1px solid var(--light-gray); */
-  background: linear-gradient(314deg, #292D32 0%, #7D8998 100%);
+  background: linear-gradient(314deg, #292d32 0%, #7d8998 100%);
   padding: 1px;
 }
 /* Border gradient */
-.bg-shine-gradient {  
+.bg-shine-gradient {
   /* border: 1px solid var(--light-gray); */
   background: linear-gradient(108deg, #000 37.64%, #1b1b1b 100%);
 }
 
-
-
-.shader_canvas > div{
+.shader_canvas > div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active{
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #ffffff;
-    transition: background-color 5000s ease-in-out 0s;
-    box-shadow: inset 0 0 20px 20px #23232329;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+  box-shadow: inset 0 0 20px 20px #23232329;
 }
-
-
-
