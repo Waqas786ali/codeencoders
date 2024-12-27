@@ -4,7 +4,7 @@ const Innovation = () => {
 
   return (
     <div className=''>
-      <section className='innovation_section z-10 w-[90%] xl:w-[80%] mx-auto min-h-screen flex items-center'>
+      <section className='innovation_section z-10 w-[90%] xl:w-[80%] mx-auto min-h-screen flex justify-center items-center'>
         <div 
           className=" relative rounded-[22px] md:rounded-[42px] w-full h-[400px] sm:h-[500px] xl:h-[630px] px-5 md:px-0" 
           style={{

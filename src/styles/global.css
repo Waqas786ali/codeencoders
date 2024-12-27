@@ -160,6 +160,7 @@ html {
   line-height: normal;
   overflow-x: hidden;
   background: var(--black);
+  position: relative;
 }
 
 /* Text Gradient Classes */
@@ -269,5 +270,6 @@ input:-webkit-autofill:active{
     transition: background-color 5000s ease-in-out 0s;
     box-shadow: inset 0 0 20px 20px #23232329;
 }
+
 
 

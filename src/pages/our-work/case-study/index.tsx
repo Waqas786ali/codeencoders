@@ -99,8 +99,8 @@ const CaseStudy: React.FC = () => {
         duration: 1,
       }
     );
-   
-    
+
+
     gsap.timeline({
       scrollTrigger: {
         trigger: '.info_img',

@@ -8,6 +8,8 @@ import { AppProvider } from "./context/AppContext";
 import Loader from "./components/shared/loader/Loader";
 import { useAppContext } from "./context/AppContext"
 import { BrowserRouter } from "react-router-dom";
+import CustomCursor from "./components/ui/custom-cursor/customCursor";
+import { useState, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,8 +42,7 @@ function App() {
 
 
 const RouteChangeHandler = () => {
-  const { isLoading,setIsLoading } = useAppContext();
-
+  const { isLoading,setIsLoading, IsDesktop } = useAppContext();
 
   return (
     <>
@@ -51,6 +52,7 @@ const RouteChangeHandler = () => {
           <>
             <Navbar />
             <Router />
+            {IsDesktop && <CustomCursor />}
             <Footer />
           </>
         )

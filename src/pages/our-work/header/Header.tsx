@@ -6,7 +6,7 @@ const Header = () => {
   const pexel = (id: any) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260`;
   const [images, setImages] = useState([
     // Front
-    { position: [0, 0, 1.5], rotation: [0, 0, 0], url: pexel(1103970), text: "img1", id: 1, },
+    { position: [0, 0, 1.5], rotation: [0, 0, 0], url: '/assets/images/our-work/1.jpg', text: "img1", id: 1, },
     // Back
     { position: [-0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(416430), text: "img2", id: 2, },
     { position: [0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(310452), text: "img3", id: 3, },
@@ -42,7 +42,7 @@ const Header = () => {
 
   const allImages = [
     // Front
-    { position: [0, 0, 1.5], rotation: [0, 0, 0], url: pexel(1103970), text: "img1", id: 1, },
+    { position: [0, 0, 1.5], rotation: [0, 0, 0], url: '/assets/images/our-work/1.jpg', text: "img1", id: 1, },
     // Back
     { position: [-0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(416430), text: "img2", id: 2, },
     { position: [0.8, 0, -0.6], rotation: [0, 0, 0], url: pexel(310452), text: "img3", id: 3, },
