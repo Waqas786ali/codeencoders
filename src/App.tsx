@@ -9,7 +9,6 @@ import Loader from "./components/shared/loader/Loader";
 import { useAppContext } from "./context/AppContext"
 import { BrowserRouter } from "react-router-dom";
 import CustomCursor from "./components/ui/custom-cursor/customCursor";
-import { useState, useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +20,6 @@ function App() {
 
 
   return (
-    <div className="parent overflow-x-hidden">
       <ReactLenis
         root
         options={{
@@ -36,7 +34,6 @@ function App() {
         </BrowserRouter>
         </AppProvider>
       </ReactLenis>
-    </div>
   );
 }
 
@@ -46,17 +43,13 @@ const RouteChangeHandler = () => {
 
   return (
     <>
-     {isLoading ? <Loader start={0} end={100} speed={30} setIsLoading={setIsLoading} />
-        :  
-        (
-          <>
-            <Navbar />
-            <Router />
-            {IsDesktop && <CustomCursor />}
-            <Footer />
-          </>
-        )
-      }
+     {isLoading && <Loader start={0} end={100} speed={30} setIsLoading={setIsLoading} />}
+        <>
+          <Navbar />
+          <Router />
+          {IsDesktop && <CustomCursor />}
+          <Footer />
+        </>
     </>
   );
 };

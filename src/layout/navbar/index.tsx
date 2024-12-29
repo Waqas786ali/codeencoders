@@ -1,13 +1,37 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Typography } from "../../components/shared/typography";
-import { Icon } from '@iconify/react';
 import { useAppContext } from "../../context/AppContext";
 import { useGSAP } from "@gsap/react";
 import { gsap } from 'gsap';
+import wrapTextInSpans from "../../components/shared/text-spans/wrapTextInSpans";
+import { Icon } from '@iconify/react';
+
 
 const Navbar = () => {
+  // Fixed Navbar on Scroll
+  const [isFixed, setIsFixed] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const currentScrollPos = window.scrollY;
+  
+      if (currentScrollPos < prevScrollPos && currentScrollPos > 700) {
+        setIsFixed(true);
+      } else if (currentScrollPos <= 700 || currentScrollPos > prevScrollPos) {
+        setIsFixed(false);
+      }
+  
+      setPrevScrollPos(currentScrollPos);
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
+  // Menu Open
   const [menuOpen, setMenuOpen] = useState(false);
   const [closeDelayed, setCloseDelayed] = useState(true);
 
@@ -17,8 +41,6 @@ const Navbar = () => {
       setCloseDelayed(false);
     }
   };
-
-
 
   const { setIsNavbarHovered } = useAppContext();
 
@@ -167,103 +189,137 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="w-[90%] mx-auto relative my-2.5 z-50">
-      <div className="absolute inset-0 bg-blur-gray bg-opacity-10 backdrop-blur-[10px] rounded-lg -z-10"></div>
+    <nav className="overflow-x-hidden">
 
-      <div className="z-20 px-5 py-5">
-        <div className="flex items-center justify-between gap-2">
-          <div>
-            <Link to={'/'}>
-              <img className="w-full sm:scale-105" src="/assets/logo.svg" alt="logo" />
-            </Link>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-5 text-white">
-            <div className="hidden xs:flex gap-1 items-center">
-              <span className="bg-secondary-blue size-2 rounded-full"></span>
-              <Typography as="p" size="sm" className="font-euro-light cursor-pointer">{activeRoute}</Typography>
-            </div>
-            <div className="cursor-pointer" onClick={toggleMenu}>
-              <img className="mx-auto w-[80%] sm:w-full" src="/assets/svgs/hamburger.svg" alt="hamburger" />
-            </div>
-          </div>
-        </div>
-      </div>
+      {isFixed && <div style={{ height: '100px' }}></div>}
+      <div className={`w-[90%] mx-auto my-2.5 z-50 transition-all duration-300 
+        ${isFixed ? "fixed top-0 left-0 right-0" : ""}`}>
+          <div className="relative w-full z-50">
+            <div className="size-full absolute inset-0 bg-blur-gray bg-opacity-10 backdrop-blur-[10px] rounded-lg -z-10"></div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen transition-all duration-[1800ms] transform ease-in-out -translate-y-full ${closeDelayed ? '!duration-[3000ms] -translate-y-full' : 'translate-y-0'}`}
-        style={{ zIndex: 40 }}
-        onMouseEnter={() => setIsNavbarHovered(true)}
-        onMouseLeave={() => setIsNavbarHovered(false)}
-      >
-        {/* Menu content */}
-        <div className="w-full h-full p-8 flex flex-col justify-between">
-          {/* Close Button */}
-          <div className="flex justify-end">
-            <button
-              className="text_apear_menu_close w-12 h-12 rounded-full text-dark-blue text-h1 flex justify-center items-center hover:bg-primary-blue-dark"
-              onClick={toggleMenu}
+            <div className="z-20 px-5 py-5">
+              <div className="flex items-center justify-between gap-2">
+                <div>
+                  <Link to={'/'}>
+                    <img className="w-full sm:scale-105" src="/assets/logo.svg" alt="logo" />
+                  </Link>
+                </div>
+                <div className="flex items-center gap-2 sm:gap-5 text-white">
+                  {
+                    activeRoute && (
+                      <div className="hidden xs:flex gap-1 items-center">
+                        <span className="bg-secondary-blue size-2 rounded-full"></span>
+                        <Typography as="p" size="sm" className="font-euro-light cursor-pointer">{activeRoute}</Typography>
+                      </div>
+                    )
+                  }
+                  <div className="cursor-pointer" onClick={toggleMenu}>
+                    <img className="mx-auto w-[80%] sm:w-full" src="/assets/svgs/hamburger.svg" alt="hamburger" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Menu */}
+            <div
+              className={`fixed top-0 left-0 w-full h-screen transition-all duration-[1800ms] transform ease-in-out -translate-y-full ${closeDelayed ? '!duration-[3000ms] -translate-y-full' : 'translate-y-0'}`}
+              style={{ zIndex: 40 }}
+              onMouseEnter={() => setIsNavbarHovered(true)}
+              onMouseLeave={() => setIsNavbarHovered(false)}
             >
-              <Icon icon="line-md:close" />
-            </button>
-          </div>
+              {/* Vertical lines */}
+              {/* <div className="-z-[1] bg-[#D3D3D3] absolute inset-0 flex justify-between gap-[230px] px-6">
+                <hr className="bg-white w-[1px] h-full" />
+                <hr className="bg-white w-[1px] h-full" />
+                <hr className="bg-white w-[1px] h-full" />
+                <hr className="bg-transparent w-[1px] h-full" />
+                <hr className="bg-white w-[1px] h-full" />
+                <hr className="bg-white w-[1px] h-full" />
+                <hr className="bg-white w-[1px] h-full" />
+              </div> */}
 
-          {/* Menu Links */}
-          <ul className="flex flex-col items-center gap-8 text-dark-blue font-euro-light">
-            <li className="flex items-center gap-5 overflow-hidden group transition-all duration-300">
-              <span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300"></span>
-              <Link className="text_apear_menu" onClick={toggleMenu} to="/"><Typography as="p" size="h2" className="group-hover:font-euro-semibold group-hover:text-primary-blue transition-all duration-300">Home</Typography></Link>
-            </li>
-            <li className="flex items-center gap-2 overflow-hidden">
-              <Link className="text_apear_menu" onClick={toggleMenu} to="/about"><Typography as="p" size="h2">Why us</Typography></Link>
-            </li>
-            <li className="flex items-center gap-2 overflow-hidden">
-              <Link className="text_apear_menu" onClick={toggleMenu} to="/team"><Typography as="p" size="h2">The Team</Typography></Link>
-            </li>
-            <li className="flex items-center gap-2 overflow-hidden">
-              <Link className="text_apear_menu" onClick={toggleMenu} to="/our-work"><Typography as="p" size="h2">Our Work</Typography></Link>
-            </li>
-            <li className="flex items-center gap-2 overflow-hidden">
-              <Link className="text_apear_menu" onClick={toggleMenu} to="/contact"><Typography as="p" size="h2">Contact Us</Typography></Link>
-            </li>
-          </ul>
+              {/* Menu content */}
+              <div className="w-full h-full p-8 flex flex-col justify-between">
+                {/* Close Button */}
+                <div className="flex justify-end">
+                  <button
+                    className="text_apear_menu_close w-12 h-12 rounded-full text-dark-blue text-h1 flex justify-center items-center hover:bg-primary-blue-dark"
+                    onClick={toggleMenu}
+                  >
+                    <Icon icon="line-md:close" />
+                  </button>
+                </div>
 
-          {/* Footer Section */}
-          <div className="text-center w-full font-euro-light text-dark-blue flex flex-col md:flex-row justify-center md:justify-between items-center">
-            <div className="md:text-left">
-              <div className="overflow-hidden">
-                <Typography as="p" size="sm" className="font-euro-semibold text_apear_menu_1">EST. 2022</Typography>
+                {/* Menu Links */}
+                <ul className="flex flex-col items-center gap-8 text-dark-blue font-euro-light">
+                  <li className="flex items-center gap-5 overflow-hidden group hoverLink">
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <Link className="text_apear_menu" onClick={toggleMenu} to="/"><Typography as="p" size="h2">
+                      {wrapTextInSpans('Home')}
+                    </Typography></Link>
+                  </li>
+                  <li className="flex items-center gap-2 overflow-hidden group group hoverLink">
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <Link className="text_apear_menu" onClick={toggleMenu} to="/about"><Typography as="p" size="h2">
+                      {wrapTextInSpans('Why Us')}
+                    </Typography></Link>
+                  </li>
+                  <li className="flex items-center gap-2 overflow-hidden group hoverLink">
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <Link className="text_apear_menu" onClick={toggleMenu} to="/team"><Typography as="p" size="h2">
+                      {wrapTextInSpans('The Team')}
+                    </Typography></Link>
+                  </li>
+                  <li className="flex items-center gap-2 overflow-hidden group hoverLink">
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <Link className="text_apear_menu" onClick={toggleMenu} to="/our-work"><Typography as="p" size="h2">
+                      {wrapTextInSpans('Our Work')}
+                    </Typography></Link>
+                  </li>
+                  <li className="flex items-center gap-2 overflow-hidden group hoverLink">
+                    <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <Link className="text_apear_menu" onClick={toggleMenu} to="/contact"><Typography as="p" size="h2">
+                      {wrapTextInSpans('Contact Us')}
+                    </Typography></Link>
+                  </li>
+                </ul>
+
+                {/* Footer Section */}
+                <div className="text-center w-full font-euro-light text-dark-blue flex flex-col md:flex-row justify-center md:justify-between items-center">
+                  <div className="md:text-left space-y-2.5">
+                    <div className="overflow-hidden">
+                      <Typography as="p" size="sm" className="font-euro-semibold text_apear_menu_1">EST.  —  2022</Typography>
+                    </div>
+                    <div className="overflow-hidden">
+                      <Typography as="p" size="sm" className="text_apear_menu_1">Crafting Solutions. <br className="hidden md:block" /> Beyond Code.</Typography>
+                    </div>
+                  </div>
+                  <div className="overflow-hidden">
+                    <Typography as="p" size="sm" className="text_apear_menu_1">2024. All rights reserved.</Typography>
+                  </div>
+                  <div className="overflow-hidden">
+                    <Typography as="p" size="sm" className="text_apear_menu_1">Info@codeencoders.com</Typography>
+                  </div>
+                </div>
               </div>
-              <div className="overflow-hidden">
-                <Typography as="p" size="sm" className="text_apear_menu_1">Crafting Solutions. <br className="hidden md:block" /> Beyond Code.</Typography>
-              </div>
             </div>
-            <div className="overflow-hidden">
-              <Typography as="p" size="sm" className="text_apear_menu_1">2024. All rights reserved.</Typography>
-            </div>
-            <div className="overflow-hidden">
-              <Typography as="p" size="sm" className="text_apear_menu_1">info@codesencoders.com</Typography>
+
+            <div className={`${closeDelayed ? 'opacity-0 invisible' : 'opacity-100 visible'} fixed top-0 left-0 h-screen w-screen overflow-hidden transition-all duration-1000 bg-light-gray bg-opacity-70`}>
+              <svg
+                id="shape-overlays"
+                className="overlay h-full w-full"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+              >
+                <path
+                  ref={pathRef}
+                  fill="#D3D3D3"
+                  vectorEffect="non-scaling-stroke"
+                  d="M 0 0 V 0 Q 50 100 100 0 V 0 z"
+                ></path>
+              </svg>
             </div>
           </div>
-        </div>
-      </div>
-
-
-
-      <div className={`${closeDelayed ? 'opacity-0 invisible' : 'opacity-100 visible'} fixed top-0 left-0 h-screen w-screen overflow-hidden transition-all duration-1000 bg-light-gray bg-opacity-70`}>
-        <svg
-          id="shape-overlays"
-          className="overlay h-full w-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            ref={pathRef}
-            fill="#D3D3D3"
-            vectorEffect="non-scaling-stroke"
-            d="M 0 0 V 0 Q 50 100 100 0 V 0 z"
-          ></path>
-        </svg>
       </div>
 
     </nav>

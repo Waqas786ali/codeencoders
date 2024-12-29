@@ -1,5 +1,5 @@
-import Hero from '../../../components/ui/hero/hero';
 import { Typography } from '../../../components/shared/typography';
+import HeroShader from '../../../components/ui/hero-shader/heroShader';
 
 const HeaderGlobe = () => {
 
@@ -7,7 +7,7 @@ const HeaderGlobe = () => {
     <div className='w-full'>
       <div className='box relative flex items-center justify-center'>
         <div className='size-[450px] sm:size-[500px] md:size-[600px] lg:size-[700px] xl:size-[700px]'>
-          <Hero />
+          <HeroShader />
         </div>
         <div className='up-element absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden'>
         <div className='overflow-hidden'>

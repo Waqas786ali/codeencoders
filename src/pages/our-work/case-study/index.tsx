@@ -78,8 +78,7 @@ const CaseStudy: React.FC = () => {
 
 
   useGSAP(() => {
-  
-  
+
     gsap.fromTo(
       ".text_apear",
       {
@@ -104,10 +103,10 @@ const CaseStudy: React.FC = () => {
     gsap.timeline({
       scrollTrigger: {
         trigger: '.info_img',
-        start: 'center center', 
+        start: 'center center',
         end: 'center top',
-        scrub: 1.5, 
-        markers: false, 
+        scrub: 1.5,
+        markers: false,
         pin: true,
         invalidateOnRefresh: true,
       },
@@ -122,27 +121,27 @@ const CaseStudy: React.FC = () => {
         }
       );
 
-      gsap.fromTo(
-        ".info_card",
-        {
-          opacity: 0.5,
-          scale: 0.5,
-          y: 200,
-        },
-        {
-          opacity: 0.8,
-          scale: 0.5,
-          y: 0,
-       
-          immediateRender: true,
-          stagger: 0.2,
-          duration: 1,
-        }
-      );
+    gsap.fromTo(
+      ".info_card",
+      {
+        opacity: 0.5,
+        scale: 0.5,
+        y: 200,
+      },
+      {
+        opacity: 0.8,
+        scale: 0.5,
+        y: 0,
 
-     
+        immediateRender: true,
+        stagger: 0.2,
+        duration: 1,
+      }
+    );
 
-          // Split text into individual letters for animation
+
+
+    // Split text into individual letters for animation
     const splitTextIntoLetters = (selector: string) => {
       gsap.utils.toArray(selector).forEach((element: any) => {
         const text = element.textContent;
@@ -189,7 +188,7 @@ const CaseStudy: React.FC = () => {
     // Apply the letter-split effect and animation to the text
     splitTextIntoLetters('.parallaxText');
     animateLetterByLetter('.parallaxText');
-   
+
     gsap.fromTo(
       ".info_card1",
       {
@@ -203,7 +202,7 @@ const CaseStudy: React.FC = () => {
           trigger: ".info_card1",
           start: "top 80%",
           end: "bottom 60%",
-          markers: false, 
+          markers: false,
           toggleActions: "play reverse play reverse",
         },
         stagger: 0.2,
@@ -223,7 +222,7 @@ const CaseStudy: React.FC = () => {
           trigger: ".info_card2",
           start: "top 80%",
           end: "bottom 20%",
-          markers: false, 
+          markers: false,
           toggleActions: "play reverse play reverse",
         },
         stagger: 0.2,

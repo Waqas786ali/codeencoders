@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "../../../lib/utils";
 import { Typography } from "../../../components/shared/typography";
+import { useAppContext } from "../../../context/AppContext";
 
 export const StickyScroll = ({
   content,
@@ -15,6 +16,10 @@ export const StickyScroll = ({
   }[];
   contentClassName?: string;
 }) => {
+
+
+  const { IsDesktop } = useAppContext();
+
   const [activeCard, setActiveCard] = useState(0);
   const ref = useRef<any>(null);
 
@@ -22,7 +27,7 @@ export const StickyScroll = ({
 
   // Track scroll progress and determine active card
   const handleScroll = () => {
-    if (ref.current) {
+    if (ref.current && IsDesktop) {
       const scrollProgress =
         ref.current.scrollTop / (ref.current.scrollHeight - ref.current.clientHeight);
       const progress = scrollProgress * cardLength;
@@ -32,11 +37,11 @@ export const StickyScroll = ({
   };
 
   useEffect(() => {
-    if (ref.current) {
+    if (ref.current && IsDesktop) {
       ref.current.addEventListener("scroll", handleScroll);
     }
     return () => {
-      if (ref.current) {
+      if (ref.current && IsDesktop) {
         ref.current.removeEventListener("scroll", handleScroll);
       }
     };
@@ -46,56 +51,59 @@ export const StickyScroll = ({
     <div
       style={{
         transition: "background-color 0.3s ease",
-        scrollBehavior: "smooth",
+        scrollBehavior: IsDesktop ? "smooth" : "initial",
       }}
-      className="stickyScroll min-h-screen w-full overflow-x-hidden grid grid-cols-1 lg:grid-cols-2 place-items-center items-end relative overflow-y-auto"
+      className={`${IsDesktop && "stickyScroll"} min-h-screen w-full overflow-x-hidden grid grid-cols-1 lg:grid-cols-2 place-items-center items-end relative overflow-y-auto`}
       ref={ref}
-      data-lenis-prevent
+      {...(IsDesktop ? { "data-lenis-prevent": true } : {})}
     >
-       <div
+      <div
         className={cn(
-          "rounded-xl sticky top-24 z-10 overflow-hidden",
+          "rounded-xl lg:sticky top-24 z-10 overflow-hidden",
           contentClassName
         )}
       >
         {content[activeCard].content ?? null}
       </div>
       <div className="relative flex justify-start items-end px-4 h-[100%]">
-        <div className="min-h-[70%] max-h-[70%] lg:min-h-[40%] lg:max-h-[40%]">
+        <div className="min-h-full max-h-full lg:min-h-[40%] lg:max-h-[40%] pt-5 sm:pt-16 lg:pt-0">
           {content.map((item, index) => (
             <div key={index} className="my-0">
-                <div className="text-center flex flex-col gap-4 items-center overflow-hidden">
-                  <Typography as="h3" size="h3" style={{
-                      opacity: activeCard === index ? 1 : 0.3,
-                      transition: "opacity 0.3s ease",
-                    }} className="font-euro-semibold w-[70%]">
-                      {item?.title}
-                  </Typography>
-                  <Typography as="p" size="base" style={{
-                      opacity: activeCard === index ? 1 : 0.3,
-                      transition: "opacity 0.3s ease",
-                    }} className="font-euro-light">
-                    {item?.name}
-                  </Typography>
+              <div className="text-center flex flex-col gap-4 items-center overflow-hidden">
 
-                  <Typography as="p" size="md" style={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                    transition: "opacity 0.3s ease",
-                  }} className="font-euro-semibold text-primary-orange">
-                      {item?.num}
-                  </Typography>
-                  <div style={{
-                    opacity: activeCard === index ? 1 : 0.3,
-                    transition: "opacity 0.3s ease",
-                  }}>
-                    {item?.description}
-                  </div>
-                  </div>
+                <Typography as="h3" size="h3" style={{
+                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                  transition: "opacity 0.3s ease",
+                }} className="font-euro-semibold w-[70%]">
+                  {item?.title}
+                </Typography>
+
+                <Typography as="p" size="base" style={{
+                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                  transition: "opacity 0.3s ease",
+                }} className="font-euro-light">
+                  {item?.name}
+                </Typography>
+
+                <Typography as="p" size="md" style={{
+                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                  transition: "opacity 0.3s ease",
+                }} className="font-euro-semibold text-primary-orange">
+                  {item?.num}
+                </Typography>
+
+                <div style={{
+                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                  transition: "opacity 0.3s ease",
+                }}>
+                  {item?.description}
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
-     
+
     </div>
   );
 };

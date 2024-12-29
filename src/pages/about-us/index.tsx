@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-import { useAppContext } from "../../context/AppContext"
 import TheART from "./art/TheArt"
 import TheClient from "./client/TheClient"
 import TheCraft from "./craft/TheCraft"

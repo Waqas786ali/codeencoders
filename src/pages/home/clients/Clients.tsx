@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
 import { useAppContext } from '../../../context/AppContext';
-
+import { useLenis } from '@studio-freight/react-lenis';
 
 
 interface Client {
@@ -97,6 +97,7 @@ const clientsData: Client[] = [
 
 
 const Clients = () => {
+
   const { IsDesktop } = useAppContext();
 
   const [menuVisible, setMenuVisible] = useState<boolean>(false);
@@ -155,29 +156,20 @@ const Clients = () => {
     }
   }, [handleClientClick]);
 
-  const [scrollValue, setScrollValue] = useState<number | null>(null);
 
+  // Stop Scrolling when menu is visible 
+
+  const lenis = useLenis();
   useEffect(() => {
     if (menuVisible) {
-      let scrollY = window.scrollY;
-      document.body.style.overflowY = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      setScrollValue(scrollY);
-    } else {
-      document.body.style.overflowY = 'auto';
-      document.body.style.position = 'initial';
-      document.body.style.top = `-${scrollValue}px`;
-
+      lenis?.stop();
+    }else{
+      lenis?.start();
     }
-
-    return () => {
-      document.body.style.overflowY = 'auto';
-      document.body.style.position = 'initial';
-    };
   }, [menuVisible]);
 
 
+  // On hover image appear and move with cursor functionality
   const [hoveredClientId, setHoveredClientId] = useState<string | null>(null);
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const imageRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -185,6 +177,8 @@ const Clients = () => {
   // Handle hover effects and move image along with cursor
   const handleMouseEnter = (clientId: string): void => {
     if(IsDesktop){
+      let ball = document.querySelector('.ball') as HTMLElement;
+      ball.style.opacity = '0';
       setHoveredClientId(clientId);
       const ref = imageRefs.current[clientId];
       if (ref) {
@@ -217,6 +211,8 @@ const Clients = () => {
 
   const handleMouseLeave = (): void => {
     if(IsDesktop){
+      let ball = document.querySelector('.ball') as HTMLElement;
+      ball.style.opacity = '1';
     if (hoveredClientId) {
       const ref = imageRefs.current[hoveredClientId];
       if (ref) {
@@ -287,10 +283,10 @@ const Clients = () => {
         </div>
 
         {menuVisible && (
-          <div onClick={toggleMenu} className="fixed h-screen top-0 left-0 right-0 bg-black bg-opacity-50 z-40 !overflow-hidden overscroll-none text-white text-h2"></div>
+          <div onClick={toggleMenu} className="fixed h-screen top-0 left-0 right-0 bg-black bg-opacity-50 z-40 !overflow-hidden text-white text-h2 no-doc-scroll overscroll-none"></div>
         )}
 
-        <div className={`z-50 fixed bottom-0 left-[5%] right-[5%] h-[calc(100vh-120px)] xs:h-[calc(100vh-80px)] md:h-[calc(100vh-200px)] lg:h-[calc(100vh-150px)] 2xl:h-[calc(100vh-250px)] ${menuVisible ? 'translate-y-0' : 'translate-y-full'} border-shine-gradient rounded-t-[22px] md:rounded-t-[42px] text-white transition-all duration-700 ease-in-out`}>
+        <div className={`z-50 fixed bottom-0 left-[5%] right-[5%] ${menuVisible ? 'translate-y-0' : 'translate-y-full'} border-shine-gradient rounded-t-[22px] md:rounded-t-[42px] text-white transition-all duration-700 ease-in-out`}>
           <div className='bg-shine-gradient p-5 sm:p-8 lg:p-10 rounded-t-[22px] md:rounded-t-[42px] size-full'>
             <div onClick={toggleMenu} className='flex items-center gap-2 absolute top-5 right-5 sm:top-8 sm:right-8 lg:top-10 lg:right-10 text-white group'>
               <div className="flex gap-2 items-center opacity-0 group-hover:opacity-100 transition-all duration-200">

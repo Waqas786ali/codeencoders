@@ -1,5 +1,5 @@
 // src/Router.tsx
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, Navigate } from 'react-router-dom';
 import Home from './pages/home';
 import AboutUs from './pages/about-us';
 import ContactUs from './pages/contact-us';
@@ -34,6 +34,10 @@ const Router =() => {
     {
       path: "/our-work/case-study/:id",
       element: <CaseStudy />,
+    },
+    {
+      path: "*",
+      element: <Navigate to="/" replace />,
     },
   ]);
 

@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        '3xl': '1800px',
         'lg': '1023px',
         'md': '767px',
         'sm': '639px',

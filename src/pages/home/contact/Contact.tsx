@@ -1,10 +1,10 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom";
 import { Typography } from '../../../components/shared/typography'
 import { Button } from '../../../components/shared/buttons'
-import { World, GlobeConfig, Position } from '../../../components/ui/globe';
+import { World, GlobeConfig, Position } from '../../../components/ui/three-globe/globe';
 
 const Contact = () => {
-
+  
   const globeConfig : GlobeConfig = {
     pointSize: 4,
     globeColor: "#062056",
@@ -391,6 +391,9 @@ const Contact = () => {
     },
   ];
 
+
+  const navigate = useNavigate(); 
+
   return (
     <section className="w-[90%] mx-auto rounded-[22px] md:rounded-[42px] my-5 relative border-shine-gradient">
         <div className="rounded-[22px] md:rounded-[42px] bg-shine-gradient px-5 lg:px-8 xl:px-14 grid grid-cols-1 lg:grid-cols-2 items-center md:gap-2">
@@ -404,11 +407,11 @@ const Contact = () => {
               <Typography as="h3" size="h3" className="font-euro-light text_apear3">Let’s Innovate, Togather.</Typography>
               </div>
             </div>
-            <Button className="text-secondary-blue text-h5">Contact us</Button>
+            <Button onClick={() => navigate("/contact")} className="text-secondary-blue text-h5">Contact us</Button>
            
           </div>
           <div className='flex justify-center items-center w-full'>
-            <div className="h-[320px] xs:h-[370px] sm:h-[450px] w-[320px] xs:w-[375px] sm:w-[450px] md:w-full md:h-[400px] lg:h-[500px] xl:w-[550px] xl:h-[550px] overflow-hidden">
+            <div className="h-[300px] w-[320px] xs:h-[370px] xs:w-[375px] sm:h-[450px] sm:w-[450px] md:w-full md:h-[400px] lg:h-[500px] xl:w-[550px] xl:h-[550px] overflow-hidden">
                 <World globeConfig={globeConfig} data={arcData} />
             </div>
           </div>

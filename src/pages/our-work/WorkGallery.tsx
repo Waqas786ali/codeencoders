@@ -123,7 +123,7 @@ function Frame({ url,id,text, c = new THREE.Color(), ...props }: FrameProps) {
 
   useFrame((state, dt) => {
     if (image.current) {
-      image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2;
+      image.current.material.zoom = 3 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 5) / 7;
       easing.damp3(image.current.scale, [0.85 * (hovered ? 0.85 : 1), 0.9 * (hovered ? 0.905 : 1), 1], 0.1, dt);
     }
     if (frame.current) {

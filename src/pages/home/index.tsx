@@ -27,30 +27,10 @@ const Home = () => {
         },
         stagger: 0.02,
         duration: 4,
+        delay: 4,
       }
     );
 
-    gsap.fromTo(
-      ".text_apear1",
-      {
-        opacity: 1,
-        y: 0,
-      },
-      {
-        opacity: 1,
-        y: 100,
-        scrollTrigger: {
-          trigger: ".text_apear1",
-          start: "top 75%",
-          end: "bottom 50%",
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-        ease: 'power2.out',
-        stagger: 0.02,
-        duration: 3,
-      }
-    );
 
     let mm = gsap.matchMedia();
     mm.add({
@@ -107,6 +87,46 @@ const Home = () => {
           ease: 'power2.out',
         }
       );
+      gsap.fromTo(
+        ".text_apear1",
+        {
+          opacity: 1,
+          y: 0,
+        },
+        {
+          opacity: 1,
+          y: 100,
+          scrollTrigger: {
+            trigger: ".text_apear1",
+            start: "top 75%",
+            end: "bottom 50%",
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+          ease: 'power2.out',
+          stagger: 0.02,
+          duration: 3,
+        }
+      );
+      gsap.fromTo('.header_shade',
+        {
+          opacity: 0.35,
+        },
+        {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: '.header_shade',
+            start: "top 30%",
+            end: "bottom top",
+            scrub: 1,
+            markers: false,
+            invalidateOnRefresh: true,
+          },
+          duration: 1.5,
+          stagger: 0.02,
+          ease: 'power2.out',
+        }
+      );
 
 
       /**
@@ -144,7 +164,9 @@ const Home = () => {
 
       // Add parallax to different image layers
       animateParallax('.serviceImgUP1', isTablet ? 20 : -120, 1.5);
-      animateParallax('.serviceImgUP2', isTablet ? 20 : -200, 1);
+      if (!isMobile) {
+        animateParallax('.serviceImgUP2', isTablet ? 20 : -200, 1);
+      }
 
 
 
