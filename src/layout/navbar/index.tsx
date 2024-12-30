@@ -18,13 +18,13 @@ const Navbar = () => {
       
       const currentScrollPos = window.scrollY;
   
-      if (currentScrollPos < prevScrollPos && currentScrollPos > 700) {
+      if (currentScrollPos > 700) {
         setIsFixed(true);
-      } else if (currentScrollPos <= 700 || currentScrollPos > prevScrollPos) {
+      } else if (currentScrollPos <= 700) {
         setIsFixed(false);
       }
   
-      setPrevScrollPos(currentScrollPos);
+      // setPrevScrollPos(currentScrollPos);
     };
   
     window.addEventListener("scroll", handleScroll);
@@ -124,11 +124,11 @@ const Navbar = () => {
 
       tl.to(
         ".text_apear_menu",
-        { opacity: 0, y: 300, stagger: 0.1, duration: 1 }
+        { opacity: 0, y: 300, stagger: 0.05, duration: 1 }
       )
         .to(
           ".text_apear_menu_1",
-          { opacity: 0, y: 300, stagger: 0.1, duration: 1 },
+          { opacity: 0, y: 300, stagger: 0.05, duration: 1 },
           "-=0.5" // starts slightly after the previous animation ends
         )
         .to(
@@ -152,7 +152,7 @@ const Navbar = () => {
             duration: 1,
             ease: "power2.out",
           },
-          "-=0.5" // starts slightly after the previous animation ends
+          "-=0.5"
         );
     }
   }, [menuOpen]);
@@ -253,31 +253,31 @@ const Navbar = () => {
                 {/* Menu Links */}
                 <ul className="flex flex-col items-center gap-8 text-dark-blue font-euro-light">
                   <li className="flex items-center gap-5 overflow-hidden group hoverLink">
-                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/"><Typography as="p" size="h2">
                       {wrapTextInSpans('Home')}
                     </Typography></Link>
                   </li>
                   <li className="flex items-center gap-2 overflow-hidden group group hoverLink">
-                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/about"><Typography as="p" size="h2">
                       {wrapTextInSpans('Why Us')}
                     </Typography></Link>
                   </li>
                   <li className="flex items-center gap-2 overflow-hidden group hoverLink">
-                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/team"><Typography as="p" size="h2">
                       {wrapTextInSpans('The Team')}
                     </Typography></Link>
                   </li>
                   <li className="flex items-center gap-2 overflow-hidden group hoverLink">
-                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                  <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/our-work"><Typography as="p" size="h2">
                       {wrapTextInSpans('Our Work')}
                     </Typography></Link>
                   </li>
                   <li className="flex items-center gap-2 overflow-hidden group hoverLink">
-                    <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 !scale-0 group-hover:!scale-100"></span></span>
+                    <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/contact"><Typography as="p" size="h2">
                       {wrapTextInSpans('Contact Us')}
                     </Typography></Link>
