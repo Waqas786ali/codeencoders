@@ -6,9 +6,9 @@ type TechnologiesProps = {
     subtitle: string;
     sectionNumber: string;
     description: string;
-    firstImage: string;
-    secondImage: string;
-    thirdImage: string;
+    firstImage?: string;
+    secondImage?: string;
+    thirdImage?: string;
   };
 };
 
@@ -51,25 +51,38 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies }) => {
 
         {/* First Image */}
         <div className="flex justify-center gap-10 overflow-hidden">
-          <img
-            className="info_card2 w-full h-[500px]"
-            src={technologies.firstImage}
-            alt="Technology illustration 1"
-          />
+          {
+            technologies.firstImage && (
+            <img
+              className="info_card2 w-full h-[500px]"
+              src={technologies.firstImage}
+              alt="Technology illustration 1"
+            />
+          )}
         </div>
 
         {/* Second and Third Images */}
         <div className="flex flex-col sm:flex-row items-center gap-5 overflow-hidden">
-          <img
-            className="info_card2 h-[315px] w-full sm:w-[60%]"
-            src={technologies.secondImage}
-              alt="Technology illustration 2"
-          />
-          <img
-            className="info_card2 object-cover h-[150px] sm:h-[315px] w-full sm:w-[40%]"
-            src={technologies.thirdImage}
-              alt="Technology illustration 3"
-          />
+          {
+            technologies.secondImage && (
+              <img
+                className={`info_card2 h-[315px] w-full sm:w-[60%]`}
+                src={technologies.secondImage}
+                  alt="Technology illustration 2"
+              />
+            )
+          }
+
+          {
+            technologies.thirdImage && (
+          
+            <img
+              className="info_card2 object-cover h-[150px] sm:h-[315px] w-full sm:w-[40%]"
+              src={technologies.thirdImage}
+                alt="Technology illustration 3"
+            />
+            )}
+           
         </div>
       </div>
     </div>

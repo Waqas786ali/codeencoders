@@ -34,7 +34,7 @@ export const WorkGallery: React.FC<{ images: Array<{ url: string }> }> = ({ imag
       </mesh>
     </group>
     <Environment files="/potsdamer_platz_1k.hdr" />
-    <Perf />
+    {/* <Perf /> */}
   </Canvas>
 );
 

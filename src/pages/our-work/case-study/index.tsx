@@ -16,7 +16,7 @@ const CaseStudy: React.FC = () => {
         year: 2024,
         country: "USA",
         website: "https://moonvault.io",
-        image: "/assets/images/case-study/moon-vault/header.png",
+        image: "/assets/images/case-study/1/header/header.svg",
       },
       about: {
         title: "About",
@@ -28,26 +28,26 @@ const CaseStudy: React.FC = () => {
           "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
           "Your story is our art, and your success is the beauty of our craft.",
         ],
-        image: "/assets/images/case-study/moon-vault/about/about.png",
+        image: "/assets/images/case-study/1/about/about.svg",
       },
       technologies: {
         title: "Technologies",
         subtitle: "How we make this happen",
         sectionNumber: "02",
         description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
-        firstImage: "/assets/images/case-study/moon-vault/tech/tech1.png",
-        secondImage: "/assets/images/case-study/moon-vault/tech/tech2.png",
-        thirdImage: "/assets/images/case-study/moon-vault/tech/tech3.png"
+        firstImage: "/assets/images/case-study/1/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/1/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/1/tech/tech3.svg"
       }
     },
     2: {
       header: {
-        title: "Another Project",
-        category: "AI / Research / Development",
-        year: 2023,
-        country: "Canada",
-        website: "https://anotherproject.com",
-        image: "/assets/images/case-study/moon-vault/header.png",
+        title: "Paw Play Love Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/2/header/header.svg",
       },
       about: {
         title: "About",
@@ -59,16 +59,326 @@ const CaseStudy: React.FC = () => {
           "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
           "Your story is our art, and your success is the beauty of our craft.",
         ],
-        image: "/assets/images/case-study/moon-vault/about/about.png",
+        image: "/assets/images/case-study/2/about/about.svg",
       },
       technologies: {
         title: "Technologies",
         subtitle: "How we make this happen",
         sectionNumber: "02",
         description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
-        firstImage: "/assets/images/case-study/moon-vault/tech/tech1.png",
-        secondImage: "/assets/images/case-study/moon-vault/tech/tech2.png",
-        thirdImage: "/assets/images/case-study/moon-vault/tech/tech3.png"
+        // firstImage: "/assets/images/case-study/2/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/2/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/2/tech/tech3.svg"
+      }
+    },
+    3: {
+      header: {
+        title: "Infinity Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/3/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/3/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/3/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/3/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/3/tech/tech3.svg"
+      }
+    },
+    4: {
+      header: {
+        title: "Giga Chad Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/4/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/4/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/4/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/4/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/4/tech/tech3.svg"
+      }
+    },
+    5: {
+      header: {
+        title: "Lawnolu Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/5/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/5/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/5/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/5/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/5/tech/tech3.svg"
+      }
+    },
+    6: {
+      header: {
+        title: "The 365 NFT Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/6/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/6/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/6/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/6/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/6/tech/tech3.svg"
+      }
+    },
+    7: {
+      header: {
+        title: "Neanderbros Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/7/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/7/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/7/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/7/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/7/tech/tech3.svg"
+      }
+    },
+    8: {
+      header: {
+        title: "Magic Bag Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/8/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/8/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/8/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/8/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/8/tech/tech3.svg"
+      }
+    },
+    9: {
+      header: {
+        title: "Singles n Seene Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/9/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/9/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/9/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/9/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/9/tech/tech3.svg"
+      }
+    },
+    10: {
+      header: {
+        title: "Golden Years Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/10/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/10/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/10/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/10/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/10/tech/tech3.svg"
+      }
+    },
+    11: {
+      header: {
+        title: "Infinity Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/11/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/11/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/11/tech/tech1.svg",
+        secondImage: "/assets/images/case-study/11/tech/tech2.svg",
+        thirdImage: "/assets/images/case-study/11/tech/tech3.svg"
+      }
+    },
+    12: {
+      header: {
+        title: "Jiniz Project",
+        category: "BlockChain / Development / UI/UX",
+        year: 2024,
+        country: "USA",
+        website: "https://moonvault.io",
+        image: "/assets/images/case-study/12/header/header.svg",
+      },
+      about: {
+        title: "About",
+        subtitle: "Detailed overview of this project",
+        sectionNumber: "01",
+        description: [
+          "We are storytellers.",
+          "We offer the full spectrum of design, branding, and consulting services to companies that are committed to realizing their brand’s potential.",
+          "Our work is grounded in the principle of eloquent visual expression: design that elevates your product, or service, and gives your audience an authentic brand experience.",
+          "Your story is our art, and your success is the beauty of our craft.",
+        ],
+        image: "/assets/images/case-study/12/about/about.svg",
+      },
+      technologies: {
+        title: "Technologies",
+        subtitle: "How we make this happen",
+        sectionNumber: "02",
+        description: "Swerri is a cutting-edge web and mobile blockchain wallet application that allows users to securely manage and transact with multiple crypto currencies. Built using React.js, Node.js, Express, Java and Kotlin, this powerful application offers a seamless user experience that makes it easy for users to manage their digital assets and make transactions with ease.  The application also offers advanced security features such as multi-factor authentication, biometric login, and encrypted private keys, which ensures that users' digital assets are protected at all times. One of the main features is the ability to swap cryptocurrencies to fiat and vice versa. It offers a smooth and seamless experience, making it easy for users to convert their digital assets into cash, or to purchase more digital assets.  Overall, it has dozens of other functionalities that offers users a unique and enjoyable experience, by allowing them to manage and transact with multiple cryptocurrencies. It's built on top of the latest technologies, making it fast, reliable and easy to use, while also prioritizing the security of the users' digital assets.",
+        // firstImage: "/assets/images/case-study/12/tech/tech1.svg",
+        // secondImage: "/assets/images/case-study/12/tech/tech2.svg",
+        // thirdImage: "/assets/images/case-study/12/tech/tech3.svg"
       }
     },
   };

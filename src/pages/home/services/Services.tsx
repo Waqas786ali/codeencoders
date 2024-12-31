@@ -43,7 +43,7 @@ const Services = () => {
                                 <div className="w-full">
                                     <Button onClick={()=> {
                                         navigate("/our-work");
-                                        handleCategoryChange("design")
+                                        handleCategoryChange("all")
                                     }} iconClassName="size-5" className="text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Case Studies (checkout now)</Button>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ const Services = () => {
                                 <div className="w-full">
                                     <Button onClick={()=> {
                                         navigate("/our-work");
-                                        handleCategoryChange("developement")
+                                        handleCategoryChange("all")
                                     }} iconClassName="size-5" className=" text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Let’s See Our Success Stories</Button>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@ const Services = () => {
                                 <div className="w-full">
                                     <Button onClick={()=> {
                                         navigate("/our-work");
-                                        handleCategoryChange("blockchain")
+                                        handleCategoryChange("all")
                                     }} iconClassName="size-5" className=" text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Checkout our portfolio</Button>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ const Services = () => {
                                 <div className="w-full">
                                     <Button onClick={()=> {
                                         navigate("/our-work");
-                                        handleCategoryChange("integrations")
+                                        handleCategoryChange("all")
                                     }} iconClassName="size-5" className="text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">A Glimpse of Our Excellence</Button>
                                 </div>
                             </div>

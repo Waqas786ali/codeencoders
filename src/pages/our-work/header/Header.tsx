@@ -14,9 +14,9 @@ const Header = () => {
 
             <div className="w-fit grid grid-cols-2 sm:flex justify-center gap-1.5 p-1.5 mx-auto rounded-xl bg-[rgba(217,217,217,0.10)] backdrop-blur-[6px]">
               <button onClick={() => handleCategoryChange("all")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "all" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>All</button>
-              <button onClick={() => handleCategoryChange("design")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "design" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Mobile Apps</button>
-              <button onClick={() => handleCategoryChange("developement")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "developement" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Web Apps</button>
-              <button onClick={() => handleCategoryChange("blockchain")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "blockchain" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Blockchain</button>
+              <button onClick={() => handleCategoryChange("mobileApps")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "mobileApps" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Mobile Apps</button>
+              <button onClick={() => handleCategoryChange("webApps")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "webApps" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Web Apps</button>
+              <button onClick={() => handleCategoryChange("blockChain")} className={`px-5 py-1.5 border rounded-md bg-[#3E3E3E] ${category === "blockChain" ? "border-secondary-blue text-secondary-blue bg-secondary-blue bg-opacity-20" : "border-[#707070]  text-[#BFBFBF]"}`}>Blockchain</button>
             </div>
           </div>
         </div>
