@@ -24,7 +24,7 @@ const Header = () => {
             </div>
           <div className='overflow-hidden'>
             <Typography as="h5" size="h5" className='text_apear text-center font-euro-light text-white mt-1'>
-            Get in touch now.
+            Get In Touch Now.
             </Typography>
             </div>
         </div>

@@ -3,8 +3,6 @@ import { Typography } from '../../../components/shared/typography'
 const Header = () => {
   return (
     <header className="w-[100%] mx-auto header h-screen relative flex flex-col items-center justify-center overflow-x-hidden">
-    <div className="left_shade left-[-100%] sm:left-[-22px]"></div>
-    <div className="right_shade right-[-100%] sm:right-[-22px]"></div>
     <div className='flex justify-center items-center h-[95%]'>
         <div className='flex flex-col items-center gap-2'>
           <div className='overflow-hidden'>

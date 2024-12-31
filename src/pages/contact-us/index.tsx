@@ -4,6 +4,8 @@ import Header from "./header/Header"
 import MatrixEffectWrapper from "./MatrixEffectWrapper"
 import ContactForm from "./contact-form/ContactForm"
 import ClientInfo from "./client-info/ClientInfo";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
 
@@ -151,7 +153,7 @@ const ContactUs = () => {
         scrollTrigger: {
           trigger: ".info_card",
           start: "top 80%",
-          end: "bottom 60%",
+          end: "bottom 0%",
           markers: false,
           toggleActions: "play reverse play reverse",
         },
@@ -170,6 +172,7 @@ const ContactUs = () => {
             <Header />
             <ContactForm />
             <ClientInfo />
+            <ToastContainer />
           </div>
         </div>
       </MatrixEffectWrapper>

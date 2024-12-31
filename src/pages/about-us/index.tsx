@@ -1,3 +1,4 @@
+import Contact from "../home/contact/Contact"
 import TheART from "./art/TheArt"
 import TheClient from "./client/TheClient"
 import TheCraft from "./craft/TheCraft"
@@ -82,7 +83,7 @@ const AboutUs = () => {
 
   return (
     <main className="overflow-y-auto -mt-24 w-full">
-      <MatrixEffectWrapper backgroundImageUrl="/assets/images/about/header/header_bg.svg">
+      <MatrixEffectWrapper >
         <div>
           <div
             className="w-full fixed inset-0 h-screen -z-10"
@@ -91,13 +92,19 @@ const AboutUs = () => {
               backgroundSize: 'cover',
               backgroundAttachment: 'fixed',
             }}
-          ></div>
+          >
+            {/* <div className="relative h-full">
+             <div className="left_shade left-[-100%] sm:left-[-22px]"></div>
+             <div className="right_shade right-[-100%] sm:right-[-22px]"></div>
+            </div> */}
+          </div>
           <div className="z-10 overflow-y-auto">
             <Header />
             <TheART />
             <TheCraft />
             <TheMethod />
             <TheClient />
+            <Contact />
           </div>
         </div>
       </MatrixEffectWrapper>

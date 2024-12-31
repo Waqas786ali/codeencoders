@@ -6,11 +6,9 @@ import Founders from "./founders/Founders";
 import TeamLeads from "./team-leads/TeamLeads";
 import MeetTeam from "./meet-team/MeetTeam";
 import Contact from "../home/contact/Contact";
-import { useAppContext } from "../../context/AppContext";
+import TheQoute from "./qoute/TheQoute";
 
 const TheTeam: React.FC = () => {
-
-  const { IsDesktop } = useAppContext();
 
   useGSAP(() => {
 
@@ -204,11 +202,12 @@ const TheTeam: React.FC = () => {
   });
 
   return (
-    <main className={`overflow-x-hidden -mt-32 ${IsDesktop && "snap-y"}`}>
+    <main className={`overflow-x-hidden -mt-32`}>
       <Header />
       <About />
       <Founders />
       <TeamLeads />
+      <TheQoute />
       <MeetTeam />
       <Contact />
     </main>

@@ -5,7 +5,7 @@ import { Button } from "../../../components/shared/buttons"
 import { Typography } from "../../../components/shared/typography"
 
 const Services = () => {
-     const {handleCategoryChange } = useAppContext();
+    const {handleCategoryChange } = useAppContext();
     const navigate = useNavigate(); 
 
   return (
@@ -31,7 +31,7 @@ const Services = () => {
                     <div className="flex flex-col">
                 
                         <div className="parrallaxSection lg:h-screen grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
-                            <div className="hidden sm:block self-start lg:pt-32 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/design1.svg" alt="design1" /></div>
+                            <div className="hidden sm:block lg:pt-5 self-start serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/design1.svg" alt="design1" /></div>
                             <div className="lg:pl-5 xl:pl-14 font-euro-light text-white flex flex-col gap-2 sm:gap-5 items-center text-left">
                                 <div className="space-y-2.5 w-full">
                                     <Typography as="h4" size="xl" className="font-euro-semibold parallaxText">Design</Typography>
@@ -47,11 +47,11 @@ const Services = () => {
                                     }} iconClassName="size-5" className="text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Case Studies (checkout now)</Button>
                                 </div>
                             </div>
-                            <div className="self-end lg:pb-16 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/design2.svg" alt="design2" /></div>
+                            <div className="self-end lg:pb-5 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/design2.svg" alt="design2" /></div>
                         </div>
 
                         <div className="parrallaxSection lg:h-screen grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
-                            <div className="hidden sm:block self-start lg:pt-20 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/developement1.svg" alt="developement1" /></div>
+                            <div className="hidden sm:block self-start lg:pt-5 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/developement1.svg" alt="developement1" /></div>
                             <div className="lg:pl-5 xl:pl-14 font-euro-light text-white flex flex-col gap-2 sm:gap-5 items-center text-left">
                                 <div className="space-y-2.5 w-full">
                                     <Typography as="h4" size="xl" className="font-euro-semibold parallaxText">Development</Typography>
@@ -68,11 +68,11 @@ const Services = () => {
                                     }} iconClassName="size-5" className=" text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Let’s See Our Success Stories</Button>
                                 </div>
                             </div>
-                            <div className="sm:block self-end lg:pb-16 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/developement2.svg" alt="developement2" /></div>
+                            <div className="lg:pb-5 self-end serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/developement2.svg" alt="developement2" /></div>
                         </div>
 
                         <div className="parrallaxSection lg:h-screen grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
-                            <div className="hidden sm:block self-start lg:pt-16 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/blockchain1.svg" alt="blockchain1" /></div>
+                            <div className="hidden sm:block self-start lg:pt-5 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/blockchain1.svg" alt="blockchain1" /></div>
                             <div className="lg:pl-5 xl:pl-14 font-euro-light text-white flex flex-col gap-2 sm:gap-5 items-center text-left">
                                 <div className="space-y-2.5 w-full">
                                     <Typography as="h4" size="xl" className="font-euro-semibold parallaxText">Blockchain</Typography>
@@ -88,11 +88,11 @@ const Services = () => {
                                     }} iconClassName="size-5" className=" text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">Checkout our portfolio</Button>
                                 </div>
                             </div>
-                            <div className="self-end lg:pb-16  serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/blockchain2.svg" alt="blockchain2" /></div>
+                            <div className="self-end lg:pb-5 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/blockchain2.svg" alt="blockchain2" /></div>
                         </div>
 
                         <div className="parrallaxSection lg:h-screen grid grid-cols-1 lg:grid-cols-3 items-center gap-0">
-                            <div className="hidden sm:block serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/integration1.svg" alt="integration1" /></div>
+                            <div className="hidden sm:block self-start lg:pt-5 serviceImgUP1"><img className="object-cover w-full" src="/assets/images/home/services/integration1.svg" alt="integration1" /></div>
                             <div className="lg:pl-5 xl:pl-14 font-euro-light text-white flex flex-col gap-2 sm:gap-5 items-center text-left">
                                 <div className="space-y-2.5 w-full">
                                     <Typography as="h4" size="xl" className="font-euro-semibold parallaxText">Integrations</Typography>
@@ -108,7 +108,7 @@ const Services = () => {
                                     }} iconClassName="size-5" className="text-secondary-blue text-xs lg:text-sm" animationClass="parallaxText-button">A Glimpse of Our Excellence</Button>
                                 </div>
                             </div>
-                            <div className="self-end lg:pb-16 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/integration2.svg" alt="integration2" /></div>
+                            <div className="self-end lg:pb-5 serviceImgUP2"><img className="object-cover w-full" src="/assets/images/home/services/integration2.svg" alt="integration2" /></div>
                         </div>
                         
                     </div>

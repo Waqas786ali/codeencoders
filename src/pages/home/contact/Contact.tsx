@@ -411,7 +411,7 @@ const Contact = () => {
            
           </div>
           <div className='flex justify-center items-center w-full'>
-            <div className="h-[300px] w-[320px] xs:h-[370px] xs:w-[375px] sm:h-[450px] sm:w-[450px] md:w-full md:h-[400px] lg:h-[500px] xl:w-[550px] xl:h-[550px] overflow-hidden">
+            <div className="h-[300px] w-[320px] xs:h-[370px] xs:w-[375px] sm:h-[430px] sm:w-[450px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[450px] xl:w-[550px] xl:h-[550px] overflow-hidden">
                 <World globeConfig={globeConfig} data={arcData} />
             </div>
           </div>

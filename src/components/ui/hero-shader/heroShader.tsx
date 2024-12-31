@@ -2,34 +2,41 @@ import React, { useRef, useEffect, useMemo } from "react";
 import { Canvas, useFrame, extend } from "@react-three/fiber";
 import * as THREE from "three";
 import { BufferAttribute, ShaderMaterial } from "three";
-// import { Perf } from 'r3f-perf'
+import { Perf } from 'r3f-perf'
+import { useTexture } from "@react-three/drei";
 
 // Extend ShaderMaterial for type support
 extend({ ShaderMaterial });
 
 const CustomShaderSphere: React.FC = () => {
+
+  
   const meshRef = useRef<THREE.Mesh>(null);
   const displacementRef = useRef<Float32Array>();
   const noiseRef = useRef<Float32Array>();
+  
 
-  // Define uniforms for the shaders
+  const texture = useTexture("/assets/images/home/header/water.jpg");
+
+  // Ensure the texture wraps correctly
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+
   const uniforms = useMemo(
     () => ({
       amplitude: { value: 1.0 },
       color: { value: new THREE.Color(0xff2200) }, // Start with orange
-      colorTexture: {
-        value: new THREE.TextureLoader().load("/assets/images/home/header/water.jpg"),
-      },
+      colorTexture: { value: texture }, // Use the loaded texture here
     }),
-    []
+    [texture] // Add `texture` as a dependency
   );
 
-  useEffect(() => {
-    if (uniforms.colorTexture.value instanceof THREE.Texture) {
-      uniforms.colorTexture.value.wrapS = THREE.RepeatWrapping;
-      uniforms.colorTexture.value.wrapT = THREE.RepeatWrapping;
-    }
-  }, [uniforms]);
+  // useEffect(() => {
+  //   if (uniforms.colorTexture.value instanceof THREE.Texture) {
+  //     uniforms.colorTexture.value.wrapS = THREE.RepeatWrapping;
+  //     uniforms.colorTexture.value.wrapT = THREE.RepeatWrapping;
+  //   }
+  // }, [uniforms]);
 
   // Vertex and fragment shaders as template literals
   const vertexShader = `
@@ -156,11 +163,12 @@ const CustomShaderSphere: React.FC = () => {
 
 
 const heroShader: React.FC = () => {
+  const DEBUG_MODE = false;
   return (
-    <Canvas className="scaling-element shader_canvas" camera={{ position: [0, 0, 280], fov: 30 }}>
+    <Canvas className="shader_canvas" camera={{ position: [0, 0, 280], fov: 30 }}>
       <ambientLight intensity={0.5} />
       <CustomShaderSphere />
-      {/* <Perf className="mt-28" /> */}
+      {DEBUG_MODE && <Perf/>}
     </Canvas>
   );
 };

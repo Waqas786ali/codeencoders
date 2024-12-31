@@ -27,7 +27,7 @@ export const StickyScroll = ({
 
   // Track scroll progress and determine active card
   const handleScroll = () => {
-    if (ref.current && IsDesktop) {
+    if (ref.current) {
       const scrollProgress =
         ref.current.scrollTop / (ref.current.scrollHeight - ref.current.clientHeight);
       const progress = scrollProgress * cardLength;
@@ -37,11 +37,11 @@ export const StickyScroll = ({
   };
 
   useEffect(() => {
-    if (ref.current && IsDesktop) {
+    if (ref.current) {
       ref.current.addEventListener("scroll", handleScroll);
     }
     return () => {
-      if (ref.current && IsDesktop) {
+      if (ref.current) {
         ref.current.removeEventListener("scroll", handleScroll);
       }
     };
@@ -70,34 +70,44 @@ export const StickyScroll = ({
           {content.map((item, index) => (
             <div key={index} className="my-0">
               <div className="text-center flex flex-col gap-4 items-center overflow-hidden">
-
-                <Typography as="h3" size="h3" style={{
-                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
-                  transition: "opacity 0.3s ease",
-                }} className="font-euro-semibold w-[70%]">
-                  {item?.title}
-                </Typography>
-
-                <Typography as="p" size="base" style={{
-                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
-                  transition: "opacity 0.3s ease",
-                }} className="font-euro-light">
-                  {item?.name}
-                </Typography>
-
-                <Typography as="p" size="md" style={{
-                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
-                  transition: "opacity 0.3s ease",
-                }} className="font-euro-semibold text-primary-orange">
-                  {item?.num}
-                </Typography>
-
-                <div style={{
-                  opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
-                  transition: "opacity 0.3s ease",
-                }}>
-                  {item?.description}
-                </div>
+                {
+                  item?.title && (
+                    <Typography as="h3" size="h3" style={{
+                      opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                      transition: "opacity 0.3s ease",
+                    }} className="font-euro-semibold w-[70%]">
+                      {item?.title}
+                    </Typography>
+                  )
+                }
+                {item?.name
+                  && (
+                    <Typography as="p" size="base" style={{
+                      opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                      transition: "opacity 0.3s ease",
+                    }} className="font-euro-light">
+                      {item?.name}
+                    </Typography>
+                  )
+                }
+                {item?.num && (
+                  <Typography as="p" size="md" style={{
+                    opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                    transition: "opacity 0.3s ease",
+                  }} className="font-euro-semibold text-primary-orange">
+                    {item?.num}
+                  </Typography>
+                )}
+                  {
+                    item?.description && (
+                      <div className="mt-4" style={{
+                        opacity: IsDesktop ? (activeCard === index ? 1 : 0.3) : 1,
+                        transition: "opacity 0.3s ease",
+                      }}>
+                        {item?.description}
+                      </div>
+                    )
+                  }
               </div>
             </div>
           ))}

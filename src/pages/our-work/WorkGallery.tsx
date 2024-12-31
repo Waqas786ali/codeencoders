@@ -5,6 +5,8 @@ import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@rea
 import { useParams, useNavigate } from 'react-router-dom';
 import { easing } from 'maath';
 import getUuid from 'uuid-by-string';
+import { Perf } from 'r3f-perf'
+
 
 const GOLDENRATIO = 1.61803398875;
 
@@ -32,6 +34,7 @@ export const WorkGallery: React.FC<{ images: Array<{ url: string }> }> = ({ imag
       </mesh>
     </group>
     <Environment files="/potsdamer_platz_1k.hdr" />
+    <Perf />
   </Canvas>
 );
 
@@ -123,8 +126,9 @@ function Frame({ url,id,text, c = new THREE.Color(), ...props }: FrameProps) {
 
   useFrame((state, dt) => {
     if (image.current) {
-      image.current.material.zoom = 3 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 5) / 7;
-      easing.damp3(image.current.scale, [0.85 * (hovered ? 0.85 : 1), 0.9 * (hovered ? 0.905 : 1), 1], 0.1, dt);
+      // image.current.material.zoom = 3 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 5) / 7;
+      image.current.material.zoom = 1;
+      easing.damp3(image.current.scale, [0.85 * (hovered ? 0.95 : 1), 0.9 * (hovered ? 0.96 : 1), 1], 0.1, dt);
     }
     if (frame.current) {
       easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt);

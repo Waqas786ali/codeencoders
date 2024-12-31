@@ -254,16 +254,70 @@ body:has(.no-doc-scroll) {
   );
 }
 
+.great_mind_shade_left,
+.great_mind_shade_right{
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 400px;
+  /* height: 80%; */
+  transform: rotate(-90deg);
+  flex-shrink: 0;
+  border-radius: 663px;
+  opacity: 0.2;
+  background: var(--primary-orange);
+  filter: blur(130.25px);
+}
+
+.great_mind_shade_left{
+  left: -20%;
+}
+.great_mind_shade_right{
+  right: -20%;
+}
+
+.meet_team_radial{
+  position: absolute;
+  /* z-index: -1; */
+  width: 100vw;
+  /* height: 1424px; */
+  flex-shrink: 0;
+  top: -20%;
+  bottom: -20%;
+  border-radius: 1550px;
+  opacity: 0.6;
+  background: radial-gradient(50% 50% at 50% 50%, #0410FF 0%, rgba(4, 16, 255, 0.00) 100%);
+}
+.team_lead_radial{
+  position: absolute;
+  /* z-index: -1; */
+  width: 100%;
+  /* height: 1424px; */
+  flex-shrink: 0;
+  top: -20%;
+  bottom: -20%;
+  border-radius: 1550px;
+  opacity: 0.6;
+  background: radial-gradient(50% 50% at 50% 50%, #F16825 0%, rgba(241, 104, 37, 0.00) 100%);
+}
+
 /* Border gradient */
 .border-shine-gradient {
-  /* border: 1px solid var(--light-gray); */
   background: linear-gradient(314deg, #292d32 0%, #7d8998 100%);
+  padding: 1px;
+}
+.border-orange-shine-gradient {
+  background: linear-gradient(180deg, #7D4900 0%, #282828 100%);
   padding: 1px;
 }
 /* Border gradient */
 .bg-shine-gradient {
-  /* border: 1px solid var(--light-gray); */
   background: linear-gradient(108deg, #000 37.64%, #1b1b1b 100%);
+}
+
+.Toastify__toast {
+  z-index: 60 !important;
+  /* top: 100px; */
 }
 
 .shader_canvas > div {

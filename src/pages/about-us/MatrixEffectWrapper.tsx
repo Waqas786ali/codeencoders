@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from 'react';
 
 interface MatrixEffectWrapperProps {
   children: React.ReactNode;
-  backgroundImageUrl: string; // Background image URL prop
 }
 
-const MatrixEffectWrapper: React.FC<MatrixEffectWrapperProps> = ({ children, backgroundImageUrl }) => {
+const MatrixEffectWrapper: React.FC<MatrixEffectWrapperProps> = ({ children }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {

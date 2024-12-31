@@ -1,5 +1,4 @@
 import { Typography } from "../../../components/shared/typography";
-import { useAppContext } from "../../../context/AppContext";
 import { StickyScroll } from "./StickyScroll";
 
 const Founders = () => {
@@ -78,14 +77,12 @@ const Founders = () => {
     },
   ];
 
-  const { IsDesktop } = useAppContext();
-
   return (
-    <section className={`w-[90%] mx-auto py-0 space-y-10 text-white ${IsDesktop && "overflow-y-scroll snap-mandatory snap-y"}`}>
-        <div className={`overflow-hidden lg:h-screen ${IsDesktop && "snap-center"}`}>
+    <section className={`w-[90%] mx-auto py-0 space-y-10 text-white`}>
+        <div className={`overflow-hidden lg:h-screen`}>
           <StickyScroll content={content} />
         </div>
-        <div className={`overflow-hidden lg:h-screen ${IsDesktop && "snap-center"}`}>
+        <div className={`overflow-hidden lg:h-screen`}>
           <StickyScroll content={content1} />
         </div>
     </section>

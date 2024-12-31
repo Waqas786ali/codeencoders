@@ -241,7 +241,11 @@ const Navbar = () => {
               {/* Menu content */}
               <div className="w-full h-full p-8 flex flex-col justify-between">
                 {/* Close Button */}
-                <div className="flex justify-end">
+                <div className="flex justify-end items-center gap-6">
+                    <div className="text_apear_menu_close flex gap-1 items-center">
+                      <span className="bg-secondary-blue size-2 rounded-full"></span>
+                      <Typography as="p" size="sm" className="font-euro-light cursor-pointer">Menu</Typography>
+                    </div>
                   <button
                     className="text_apear_menu_close w-12 h-12 rounded-full text-dark-blue text-h1 flex justify-center items-center hover:bg-primary-blue-dark"
                     onClick={toggleMenu}
@@ -251,7 +255,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Menu Links */}
-                <ul className="flex flex-col items-center gap-8 text-dark-blue font-euro-light">
+                <ul className="flex flex-col items-center gap-8 text-dark-blue font-euro-light pr-10 sm:pr-5 md:pr-0">
                   <li className="flex items-center gap-5 overflow-hidden group hoverLink">
                   <span className="h-6 w-6"><span className="text_apear_menu bg-primary-blue size-5 rounded-full transition-all duration-300 group-hover:transition-all group-hover:duration-500 group-hover:ease-in !scale-0 group-hover:!scale-100"></span></span>
                     <Link className="text_apear_menu" onClick={toggleMenu} to="/"><Typography as="p" size="h2">

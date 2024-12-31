@@ -163,10 +163,10 @@ const Home = () => {
       };
 
       // Add parallax to different image layers
-      animateParallax('.serviceImgUP1', isTablet ? 20 : -120, 1.5);
       if (!isMobile) {
-        animateParallax('.serviceImgUP2', isTablet ? 20 : -200, 1);
+        animateParallax('.serviceImgUP1', isTablet ? 20 : 230, 1.5);
       }
+      animateParallax('.serviceImgUP2', isTablet ? 20 : -230, 1.5);
 
 
 
@@ -265,7 +265,7 @@ const Home = () => {
           y: 0,
           scrollTrigger: {
             trigger: '.text_reveal_1',
-            start: "center center",
+            start: "center 60%",
             end: "center top",
             scrub: 1,
             pin: '.lock_section_1',

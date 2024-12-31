@@ -5,6 +5,8 @@ import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "./globe.json";
+import { Perf } from 'r3f-perf'
+
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -241,11 +243,18 @@ export function WebGLRendererConfig() {
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
   }, []);
+  // useEffect(() => {
+  //   gl.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // Limit to 1.5 for better performance
+  //   gl.setSize(size.width, size.height);
+  // }, [gl, size]);
 
   return null;
 }
 
 export function World(props: WorldProps) {
+
+  const DEBUG_MODE = false;
+
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
@@ -277,6 +286,7 @@ export function World(props: WorldProps) {
         minPolarAngle={Math.PI / 3.5}
         maxPolarAngle={Math.PI - Math.PI / 3}
       />
+      {DEBUG_MODE && <Perf/>}
     </Canvas>
   );
 }
