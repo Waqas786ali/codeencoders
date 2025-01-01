@@ -187,6 +187,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     ];
   
     const handleCategoryChange = (selectedCategory: string) => {
+      if (selectedCategory === category) {
+        return;
+      }
       setIsWorkGalleryLoading(true);
       setCategory(selectedCategory);
   
