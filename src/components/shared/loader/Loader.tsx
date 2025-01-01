@@ -9,6 +9,7 @@ interface NumberLoaderProps {
   started?: boolean;
   speed?: number;
   setIsLoading: (value: boolean) => void;
+  setShouldAnimePlay: (value: boolean) => void;
 }
 
 const Loader: React.FC<NumberLoaderProps> = ({
@@ -16,6 +17,7 @@ const Loader: React.FC<NumberLoaderProps> = ({
   end,
   speed = 100,
   setIsLoading,
+  setShouldAnimePlay,
   started = true, // default to true to start the loader by default
 }) => {
   const [number, setNumber] = useState<number>(start);
@@ -23,20 +25,24 @@ const Loader: React.FC<NumberLoaderProps> = ({
   useEffect(() => {
     // Only run loader if `started` is true
     if (!started) return;
-
+    setShouldAnimePlay(false);
     setIsLoading(true);
 
     let currentProgress = start;
     const interval = setInterval(() => {
       if (currentProgress < end) {
-        currentProgress += 1; // Increment progress
+        currentProgress += 1;
         setNumber(currentProgress);
       }
       else {
-        clearInterval(interval); // Stop the interval
-        setIsLoading(false); // Mark loading as complete
+        clearInterval(interval);
+        setIsLoading(false);
+        setShouldAnimePlay(true);
+        console.log("done", currentProgress);
+        
       }
     }, speed);
+    
     // Cleanup interval on component unmount or route change
     return () => {
       clearInterval(interval);

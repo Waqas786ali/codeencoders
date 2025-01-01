@@ -437,3 +437,7 @@ input:-webkit-autofill:active {
   text-shadow: 1px 1px 0px #ddd, 2px 2px 0px #ddd, 3px 3px 0px #ddd;
   color: var(--primary-blue); /* Change text color on hover */
 }
+
+.text_apear{
+  opacity: 0;
+}

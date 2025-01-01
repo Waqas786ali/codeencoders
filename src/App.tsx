@@ -39,11 +39,11 @@ function App() {
 
 
 const RouteChangeHandler = () => {
-  const { isLoading,setIsLoading, IsDesktop } = useAppContext();
+  const { isLoading,setIsLoading,setShouldAnimePlay, IsDesktop } = useAppContext();
 
   return (
     <>
-     {isLoading && <Loader start={0} end={100} speed={30} setIsLoading={setIsLoading} />}
+     {isLoading && <Loader start={0} end={100} speed={30} setIsLoading={setIsLoading} setShouldAnimePlay={setShouldAnimePlay} />}
         <>
           <Navbar />
           <Router />

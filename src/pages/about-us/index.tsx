@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
+import { useGSAP } from "@gsap/react"
+import { gsap } from 'gsap';
 import Contact from "../home/contact/Contact"
 import TheART from "./art/TheArt"
 import TheClient from "./client/TheClient"
@@ -5,32 +9,53 @@ import TheCraft from "./craft/TheCraft"
 import Header from "./header/Header"
 import MatrixEffectWrapper from "./MatrixEffectWrapper"
 import TheMethod from "./method/TheMethod"
-import { useGSAP } from "@gsap/react"
-import { gsap } from 'gsap';
 
 const AboutUs = () => {
 
+  const {shouldAnimePlay } = useAppContext();
+    useEffect(() => {
+      if (!shouldAnimePlay) return;
+  
+      const animation = gsap.fromTo(
+         ".text_apear",
+         {
+           opacity: 1,
+           y: 200,
+         },
+         {
+           opacity: 1,
+           y: 0,
+           stagger: 0.02,
+           duration: 3,
+         }
+       );
+      
+      return () => {
+        animation.kill();
+      };
+    }, [shouldAnimePlay]);
+
   useGSAP(() => {
 
-    gsap.fromTo(
-      ".text_apear",
-      {
-        opacity: 1,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".text_apear",
-          start: "top 100%",
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
-        stagger: 0.02, // Each letter (or child) is staggered by 0.02s
-        duration: 1, // Total duration of the animation (2 seconds)
-      }
-    );
+    // gsap.fromTo(
+    //   ".text_apear",
+    //   {
+    //     opacity: 1,
+    //     y: 100,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     scrollTrigger: {
+    //       trigger: ".text_apear",
+    //       start: "top 100%",
+    //       end: "bottom 60%",
+    //       toggleActions: "play none none none",
+    //     },
+    //     stagger: 0.02, // Each letter (or child) is staggered by 0.02s
+    //     duration: 1, // Total duration of the animation (2 seconds)
+    //   }
+    // );
 
     // Split text into individual letters for animation
     const splitTextIntoLetters = (selector: string) => {

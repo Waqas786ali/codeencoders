@@ -1,6 +1,8 @@
-import Header from "./header/Header";
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import Header from "./header/Header";
 import About from "./about/About";
 import Founders from "./founders/Founders";
 import TeamLeads from "./team-leads/TeamLeads";
@@ -10,27 +12,50 @@ import TheQoute from "./qoute/TheQoute";
 
 const TheTeam: React.FC = () => {
 
+  const {shouldAnimePlay } = useAppContext();
+    useEffect(() => {
+      if (!shouldAnimePlay) return;
+  
+      const animation = gsap.fromTo(
+         ".text_apear",
+         {
+           opacity: 1,
+           y: 200,
+         },
+         {
+           opacity: 1,
+           y: 0,
+           stagger: 0.02,
+           duration: 3,
+         }
+       );
+      
+      return () => {
+        animation.kill();
+      };
+    }, [shouldAnimePlay]);
+
   useGSAP(() => {
 
-    gsap.fromTo(
-      ".text_apear",
-      {
-        opacity: 1,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".text_apear",
-          start: "top 100%",
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
-        stagger: 0.2,
-        duration: 1,
-      }
-    );
+    // gsap.fromTo(
+    //   ".text_apear",
+    //   {
+    //     opacity: 1,
+    //     y: 100,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     scrollTrigger: {
+    //       trigger: ".text_apear",
+    //       start: "top 100%",
+    //       end: "bottom 60%",
+    //       toggleActions: "play none none none",
+    //     },
+    //     stagger: 0.2,
+    //     duration: 1,
+    //   }
+    // );
 
     gsap.timeline({
       scrollTrigger: {

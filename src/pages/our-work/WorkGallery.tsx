@@ -6,6 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { easing } from 'maath';
 import getUuid from 'uuid-by-string';
 import { Perf } from 'r3f-perf'
+import { useAppContext } from '../../context/AppContext';
 
 
 const GOLDENRATIO = 1.61803398875;
@@ -72,6 +73,9 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }:
     q.identity();
   },[p,q]);
 
+
+   const {setIsLoading } = useAppContext();
+
   return (
     <group
       ref={ref}
@@ -101,6 +105,7 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }:
         e.stopPropagation();
         const clickedObject = e.object;
         if (clickedObject && clickedObject.name) {
+          setIsLoading(true);
           navigate(`/our-work/case-study/${clickedObject.name}`);
         }
       }}

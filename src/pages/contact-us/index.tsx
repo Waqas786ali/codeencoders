@@ -1,5 +1,7 @@
-import { useGSAP } from "@gsap/react"
+import { useEffect } from "react";
+import { useAppContext } from "../../context/AppContext";
 import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react"
 import Header from "./header/Header"
 import MatrixEffectWrapper from "./MatrixEffectWrapper"
 import ContactForm from "./contact-form/ContactForm"
@@ -9,27 +11,50 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
 
+  const {shouldAnimePlay } = useAppContext();
+    useEffect(() => {
+      if (!shouldAnimePlay) return;
+  
+      const animation = gsap.fromTo(
+         ".text_apear",
+         {
+           opacity: 1,
+           y: 200,
+         },
+         {
+           opacity: 1,
+           y: 0,
+           stagger: 0.02,
+           duration: 3,
+         }
+       );
+      
+      return () => {
+        animation.kill();
+      };
+    }, [shouldAnimePlay]);
+
   useGSAP(() => {
 
-    gsap.fromTo(
-      ".text_apear",
-      {
-        opacity: 1,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".text_apear",
-          start: "top 100%",
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
-        stagger: 0.02, // Each letter (or child) is staggered by 0.02s
-        duration: 1, // Total duration of the animation (2 seconds)
-      }
-    );
+    // gsap.fromTo(
+    //   ".text_apear",
+    //   {
+    //     opacity: 1,
+    //     y: 100,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     scrollTrigger: {
+    //       trigger: ".text_apear",
+    //       start: "top 100%",
+    //       end: "bottom 60%",
+    //       toggleActions: "play none none none",
+    //     },
+    //     stagger: 0.02, // Each letter (or child) is staggered by 0.02s
+    //     duration: 1, // Total duration of the animation (2 seconds)
+    //   }
+    // );
 
     // Split text into individual letters for animation
     const splitTextIntoLetters = (selector: string) => {

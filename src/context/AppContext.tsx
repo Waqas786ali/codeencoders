@@ -13,6 +13,8 @@ interface AppContextType {
   handleCategoryChange: any;
   isWorkGalleryLoading: boolean;
   category: string;
+  shouldAnimePlay: boolean;
+  setShouldAnimePlay: (value: boolean) => void;
 }
 
 // Create the context with a default value
@@ -22,6 +24,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [shouldAnimePlay, setShouldAnimePlay] = useState<boolean>(true);
   const [isNavbarHovered, setIsNavbarHovered] = useState<boolean>(false);
   const [IsDesktop, setIsDesktop] = useState<boolean>(true);
 
@@ -212,7 +215,9 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
     <AppContext.Provider value={{ 
         isLoading, setIsLoading, isNavbarHovered, setIsNavbarHovered, IsDesktop,
         // Our Work Gallery
-        images, setImages,handleCategoryChange,isWorkGalleryLoading,category
+        images, setImages,handleCategoryChange,isWorkGalleryLoading,category,
+        // Anime Play 
+        shouldAnimePlay, setShouldAnimePlay,
       }}>
       {children}
     </AppContext.Provider>

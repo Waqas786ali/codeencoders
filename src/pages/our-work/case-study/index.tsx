@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Header from "./header/Header";
 import About from "./about/About";
@@ -6,6 +6,8 @@ import Technologies from "./technologies/Technologies";
 import VisitSite from "./visit-site/VisitSite";
 import { useGSAP } from "@gsap/react"
 import { gsap } from 'gsap';
+import { useAppContext } from "../../../context/AppContext";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const CaseStudy: React.FC = () => {
   const data = {
@@ -321,7 +323,7 @@ const CaseStudy: React.FC = () => {
     },
     11: {
       header: {
-        title: "Infinity Project",
+        title: "FITS Project",
         category: "BlockChain / Development / UI/UX",
         year: 2024,
         country: "USA",
@@ -386,14 +388,16 @@ const CaseStudy: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const caseStudy = id && data[parseInt(id, 10) as keyof typeof data];
 
+  const { shouldAnimePlay } = useAppContext();
 
-  useGSAP(() => {
-
-    gsap.fromTo(
+  useEffect(() => {
+    if (!shouldAnimePlay) return;
+    ScrollTrigger.refresh();  
+    const animation1 = gsap.fromTo(
       ".text_apear",
       {
         opacity: 1,
-        y: 100,
+        y: 200,
       },
       {
         opacity: 1,
@@ -404,11 +408,36 @@ const CaseStudy: React.FC = () => {
           end: "bottom 60%",
           toggleActions: "play none none none",
         },
-        stagger: 0.2,
+        stagger: 0.1,
         duration: 1,
+        immediateRender: true,
       }
     );
+    const animation2 = gsap.fromTo(
+        ".info_card",
+        {
+          opacity: 0.5,
+          scale: 0.5,
+          y: 200,
+        },
+        {
+          opacity: 0.8,
+          scale: 0.5,
+          y: 0,
 
+          immediateRender: true,
+          stagger: 0.2,
+          duration: 1,
+        }
+      );
+    
+    return () => {
+      animation1.kill();
+      animation2.kill();
+    }
+  },[shouldAnimePlay])
+
+  useGSAP(() => {
 
     gsap.timeline({
       scrollTrigger: {
@@ -430,26 +459,6 @@ const CaseStudy: React.FC = () => {
           ease: 'power3.inOut',
         }
       );
-
-    gsap.fromTo(
-      ".info_card",
-      {
-        opacity: 0.5,
-        scale: 0.5,
-        y: 200,
-      },
-      {
-        opacity: 0.8,
-        scale: 0.5,
-        y: 0,
-
-        immediateRender: true,
-        stagger: 0.2,
-        duration: 1,
-      }
-    );
-
-
 
     // Split text into individual letters for animation
     const splitTextIntoLetters = (selector: string) => {
@@ -541,7 +550,6 @@ const CaseStudy: React.FC = () => {
     );
 
   });
-
 
   if (!caseStudy) {
     return <p className="text-white">Case study not found</p>;

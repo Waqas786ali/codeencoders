@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
+import { useAppContext } from '../../context/AppContext';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from './header/Header';
 import Services from './services/Services';
 import Contact from './contact/Contact';
@@ -8,29 +11,51 @@ import GreatMinds from './great-minds/GreatMinds';
 import Clients from './clients/Clients';
 
 const Home = () => {
+  const {shouldAnimePlay } = useAppContext();
+  useEffect(() => {
+    if (!shouldAnimePlay) return;
+
+    const animation = gsap.fromTo(
+       ".text_apear",
+       {
+         opacity: 1,
+         y: 200,
+       },
+       {
+         opacity: 1,
+         y: 0,
+         stagger: 0.02,
+         duration: 3,
+       }
+     );
+    
+    return () => {
+      animation.kill();
+    };
+  }, [shouldAnimePlay]);
+
   useGSAP(() => {
 
-    gsap.fromTo(
-      ".text_apear",
-      {
-        opacity: 1,
-        y: 200,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scrollTrigger: {
-          trigger: ".text_apear",
-          start: "top 100%",
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
-        stagger: 0.02,
-        duration: 4,
-        delay: 4,
-      }
-    );
-
+    // gsap.fromTo(
+    //   ".text_apear",
+    //   {
+    //     opacity: 1,
+    //     y: 200,
+    //   },
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //     scrollTrigger: {
+    //       trigger: ".text_apear",
+    //       start: "top 100%",
+    //       end: "bottom 60%",
+    //       toggleActions: "play none none none",
+    //     },
+    //     stagger: 0.02,
+    //     duration: 4,
+    //     // delay: 4,
+    //   }
+    // );
 
     let mm = gsap.matchMedia();
     mm.add({
@@ -41,7 +66,6 @@ const Home = () => {
     }, (context) => {
       const conditions = context.conditions as { isSMMobile: boolean; isMobile: boolean; isTablet: boolean; isDesktop: boolean };
       const { isSMMobile, isMobile, isTablet, isDesktop } = conditions;
-      console.log(conditions, "context");
 
 
       gsap.fromTo('.scaling-element',

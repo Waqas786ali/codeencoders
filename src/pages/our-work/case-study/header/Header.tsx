@@ -73,9 +73,9 @@ const Header: React.FC<HeaderProps> = ({ header }) => {
         </div>
         <div className='overflow-hidden'>
           <img
-            className="w-full h-[500px] scale-50 info_card info_img"
+            className="w-full h-[500px] info_card info_img"
             src={header.image}
-            alt={"case-study header 1"}
+            alt={"case-study-header-1"}
           />
         </div>
       </div>
