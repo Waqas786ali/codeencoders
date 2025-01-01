@@ -402,12 +402,12 @@ const CaseStudy: React.FC = () => {
       {
         opacity: 1,
         y: 0,
-        scrollTrigger: {
-          trigger: ".text_apear",
-          start: "top 100%",
-          end: "bottom 60%",
-          toggleActions: "play none none none",
-        },
+        // scrollTrigger: {
+        //   trigger: ".text_apear",
+        //   start: "top 100%",
+        //   end: "bottom 60%",
+        //   toggleActions: "play none none none",
+        // },
         stagger: 0.1,
         duration: 1,
         immediateRender: true,
@@ -425,9 +425,10 @@ const CaseStudy: React.FC = () => {
           scale: 0.5,
           y: 0,
 
-          immediateRender: true,
+          // immediateRender: true,
           stagger: 0.2,
           duration: 1,
+          delay: 1,
         }
       );
     
