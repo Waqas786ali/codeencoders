@@ -424,7 +424,6 @@ const CaseStudy: React.FC = () => {
           opacity: 0.8,
           scale: 0.5,
           y: 0,
-
           // immediateRender: true,
           stagger: 0.2,
           duration: 1,

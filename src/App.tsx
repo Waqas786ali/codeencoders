@@ -9,6 +9,7 @@ import Loader from "./components/shared/loader/Loader";
 import { useAppContext } from "./context/AppContext"
 import { BrowserRouter } from "react-router-dom";
 import CustomCursor from "./components/ui/custom-cursor/customCursor";
+import ScrollToTop from "./components/shared/scroll-top/ScrollToTop";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,6 +47,7 @@ const RouteChangeHandler = () => {
      {isLoading && <Loader start={0} end={100} speed={30} setIsLoading={setIsLoading} setShouldAnimePlay={setShouldAnimePlay} />}
         <>
           <Navbar />
+          <ScrollToTop />
           <Router />
           {IsDesktop && <CustomCursor />}
           <Footer />
